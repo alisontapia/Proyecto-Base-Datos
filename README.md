@@ -17,7 +17,7 @@
 2. [Diagrama Entidad-Relación](#-diagrama-entidad-relación)
 3. [Modelo relacional](#-modelo-relacional)
 4. [Código SQL de las tablas](#-código-sql-de-las-tablas)
-5. [Consultas](#-consultas)
+6. [Consultas](#-consultas)
 
 ## 📖 Descripción del proyecto
 
