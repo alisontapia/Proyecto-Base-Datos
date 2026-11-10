@@ -36,7 +36,7 @@ Gracias a la integridad referencial se evitan casos como emparejar a un jugador 
 
 El modelo usa la notación de Chen y tiene cinco entidades: **Torneo**, **Jugador**, **Inscripción**, **Ronda** y **Emparejamiento**. La entidad Inscripción resuelve la relación de muchos a muchos entre Jugador y Torneo y guarda los datos propios de cada participación. Los atributos con línea punteada (`puntaje`, `color_jugador2`) son derivados.
 
-![Diagrama Entidad-Relación](docs/img/diagrama-er.png)
+![Diagrama Entidad-Relación](/img/diagrama-er.png)
 
 ## 🗂️ Modelo relacional
 
@@ -47,7 +47,7 @@ Se obtuvo aplicando las reglas de transformación del modelo E-R:
 - `emparejamiento` se relaciona dos veces con `inscripcion`, por lo que tiene dos FK (`id_inscripcion_j1` e `id_inscripcion_j2`); la segunda es opcional para representar el descanso.
 - `color_jugador2` no se almacena como dato independiente: es una columna generada a partir de `color_jugador1`.
 
-![Modelo relacional](docs/img/modelo-relacional.png)
+![Modelo relacional](/img/modelo-relacional.png)
 
 > **Nota:** el diagrama muestra la estructura base de las tablas; la columna `puntaje` de `inscripcion` está definida en el código SQL de abajo.
 
@@ -204,7 +204,7 @@ WHERE  elo_fide >= 1600;
 
 **Resultado:** Tres jugadores cumplen la condición: Mateo Armijos (1650), Sofía Jaramillo (1720) y Andrés Ludeña (1890).
 
-![Resultado de la consulta 1](docs/img/consulta-1.png)
+![Resultado de la consulta 1](/img/consulta-1.png)
 
 ### Consulta 2 — Proyección (π)
 
@@ -225,7 +225,7 @@ FROM   jugador;
 
 **Resultado:** Se obtienen 4 filas: Club Ajedrez Loja, Academia Caissa, Club Torre Blanca y Academia Alfil Negro.
 
-![Resultado de la consulta 2](docs/img/consulta-2.png)
+![Resultado de la consulta 2](/img/consulta-2.png)
 
 ### Consulta 3 — Selección con proyección (σ + π)
 
@@ -247,7 +247,7 @@ WHERE  estado = 'PROGRAMADO';
 
 **Resultado:** Se listan los dos torneos programados: Torneo Infantil Sub-12 y Rápidas de Fin de Año.
 
-![Resultado de la consulta 3](docs/img/consulta-3.png)
+![Resultado de la consulta 3](/img/consulta-3.png)
 
 ### Consulta 4 — Reunión natural / JOIN (⋈)
 
@@ -273,7 +273,7 @@ ORDER  BY i.posicion_inicial;
 
 **Resultado:** Seis filas, una por jugador inscrito, ordenadas por posición inicial.
 
-![Resultado de la consulta 4](docs/img/consulta-4.png)
+![Resultado de la consulta 4](/img/consulta-4.png)
 
 ### Consulta 5 — Reunión externa (σ + π + ⟕)
 
@@ -296,7 +296,7 @@ WHERE  i.id_inscripcion IS NULL;
 
 **Resultado:** Una sola fila: «Rápidas de Fin de Año», que aún no tiene inscripciones. Con un `INNER JOIN` este torneo no aparecería.
 
-![Resultado de la consulta 5](docs/img/consulta-5.png)
+![Resultado de la consulta 5](/img/consulta-5.png)
 
 ## 📚 Referencias
 
